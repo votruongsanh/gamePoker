@@ -1,38 +1,209 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form {
+  border-radius: 3px;
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.2);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.button {
+  width: 100%;
+  margin: 15px 0;
+  background-color: #785580;
+  border: none;
+  color: #fff;
+  border-radius: 2px;
+  padding: 7px 10px;
+  font-size: 1em;
+  cursor: pointer;
+}
+.row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  padding: 10px;
 }
-
-.App-link {
-  color: #61dafb;
+.row__player {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding: 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.player__item {
+  width: 49%;
+}
+.cell {
+  min-height: 75px;
+  flex-grow: 1;
+  flex-basis: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+#ii0hl {
+  flex-basis: 95.7%;
+}
+#iek88 {
+  margin: 15px 20px 15px 0;
+  width: 350px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#i9gof {
+  width: 350px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#ixjt2 {
+  width: 350px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#ixjt2:hover {
+  opacity: 0.8;
+}
+#i9gof:hover {
+  opacity: 0.8;
+}
+#iek88:hover {
+  opacity: 0.8;
+}
+#iek88:active {
+  opacity: 1;
+  box-shadow: 6px -6px 5px 0 #6d3e3e;
+}
+#i9gof:active {
+  box-shadow: 6px -6px 5px 0 #6d3e3e;
+}
+#ixjt2:active {
+  box-shadow: 6px -6px 5px 0 #6d3e3e;
+}
+#ixjt2:disabled {
+  opacity: 0.4;
+}
+#iqcpy:active {
+  border-radius: 0 0 0 0;
+  border: 3px dashed black;
+}
+#iqcpy {
+  border: 3px dotted black;
+  padding: 5px 5px 5px 5px;
+  margin: 0 5px 5px 0;
+  border-radius: 10px 10px 10px 10px;
+}
+#iffl8 {
+  margin: 15px 20px 15px 0;
+  width: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  align-self: flex-start;
+}
+#iffl8:hover {
+  opacity: 0.8;
+}
+#iffl8:active {
+  opacity: 1;
+  box-shadow: 6px -6px 5px 0 #6d3e3e;
+}
+#iobzo {
+  flex-basis: 22.23%;
+}
+#iccxl {
+  margin: 15px 20px 15px 0;
+  width: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  align-self: flex-start;
+}
+#iccxl:hover {
+  opacity: 0.8;
+}
+#iccxl:active {
+  opacity: 1;
+  box-shadow: 6px -6px 5px 0 #6d3e3e;
+}
+#i7sdf {
+  flex-basis: 22.23%;
+}
+#i2fss:active {
+  border-radius: 0 0 0 0;
+  border: 3px dashed black;
+}
+#i2fss {
+  border: 3px dotted black;
+  padding: 5px 5px 5px 5px;
+  margin: 0 5px 0 0;
+  border-radius: 10px 10px 10px 10px;
+}
+#io4cw {
+  margin: 15px 20px 15px 0;
+  width: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  align-self: flex-start;
+}
+#io4cw:hover {
+  opacity: 0.8;
+}
+#io4cw:active {
+  opacity: 1;
+  box-shadow: 6px -6px 5px 0 #6d3e3e;
+}
+#iebay {
+  flex-basis: 22.23%;
+}
+#idyqc:active {
+  border-radius: 0 0 0 0;
+  border: 3px dashed black;
+}
+#idyqc {
+  border: 3px dotted black;
+  padding: 5px 5px 5px 5px;
+  margin: 0 5px 0 0;
+  border-radius: 10px 10px 10px 10px;
+}
+#i89jj {
+  margin: 15px 20px 15px 0;
+  width: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  align-self: flex-start;
+}
+#i89jj:hover {
+  opacity: 0.8;
+}
+#i89jj:active {
+  opacity: 1;
+  box-shadow: 6px -6px 5px 0 #6d3e3e;
+}
+#ijkre {
+  flex-basis: 22.23%;
+}
+#i47tv:active {
+  border-radius: 0 0 0 0;
+  border: 3px dashed black;
+}
+#i47tv {
+  border: 3px dotted black;
+  padding: 5px 5px 5px 5px;
+  margin: 0 5px 0 0;
+  border-radius: 10px 10px 10px 10px;
+}
+#ij5ar {
+  padding: 10px 30px 10px 30px;
+}
+@media (max-width: 768px) {
+  .row {
+    flex-wrap: wrap;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.container-cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: start;
+}
+.m-2 {
+  margin: 8px;
 }

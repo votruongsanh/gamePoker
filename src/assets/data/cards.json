@@ -1,0 +1,67 @@
+[
+    
+    {"img": "./playingcard/2b.png"},
+    {"img": "./playingcard/2c.png"},
+    {"img": "./playingcard/2ch.png"},
+    {"img": "./playingcard/2r.png"},
+
+    {"img": "./playingcard/3b.png"},
+    {"img": "./playingcard/3c.png"},
+    {"img": "./playingcard/3ch.png"},
+    {"img": "./playingcard/3r.png"},
+    
+    {"img": "./playingcard/4b.png"},
+    {"img": "./playingcard/4c.png"},
+    {"img": "./playingcard/4ch.png"},
+    {"img": "./playingcard/4r.png"},
+
+    {"img": "./playingcard/5b.png"},
+    {"img": "./playingcard/5c.png"},
+    {"img": "./playingcard/5ch.png"},
+    {"img": "./playingcard/5r.png"},
+    
+    {"img": "./playingcard/6b.png"},
+    {"img": "./playingcard/6c.png"},
+    {"img": "./playingcard/6ch.png"},
+    {"img": "./playingcard/6r.png"},
+    
+    {"img": "./playingcard/7b.png"},
+    {"img": "./playingcard/7c.png"},
+    {"img": "./playingcard/7ch.png"},
+    {"img": "./playingcard/7r.png"},
+    
+    {"img": "./playingcard/8b.png"},
+    {"img": "./playingcard/8c.png"},
+    {"img": "./playingcard/8ch.png"},
+    {"img": "./playingcard/8r.png"},
+    
+    {"img": "./playingcard/9b.png"},
+    {"img": "./playingcard/9c.png"},
+    {"img": "./playingcard/9ch.png"},
+    {"img": "./playingcard/9r.png"},
+    
+    {"img": "./playingcard/10b.png"},
+    {"img": "./playingcard/10c.png"},
+    {"img": "./playingcard/10ch.png"},
+    {"img": "./playingcard/10r.png"},
+    
+    {"img": "./playingcard/11b.png"},
+    {"img": "./playingcard/11c.png"},
+    {"img": "./playingcard/11ch.png"},
+    {"img": "./playingcard/11r.png"},
+    
+    {"img": "./playingcard/12b.png"},
+    {"img": "./playingcard/12c.png"},
+    {"img": "./playingcard/12ch.png"},
+    {"img": "./playingcard/12r.png"},
+    
+    {"img": "./playingcard/13b.png"},
+    {"img": "./playingcard/13c.png"},
+    {"img": "./playingcard/13ch.png"},
+    {"img": "./playingcard/13r.png"},
+    
+    {"img": "./playingcard/1b.png"},
+    {"img": "./playingcard/1c.png"},
+    {"img": "./playingcard/1ch.png"},
+    {"img": "./playingcard/1r.png"}
+]
