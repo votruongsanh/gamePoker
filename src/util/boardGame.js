@@ -68,20 +68,20 @@ export default class BoardGame {
     }
   }
 
-  async handlePlay(index, fnCallack) {
+  handlePlay(index, fnCallack) {
+    
     setTimeout(() => {
-      if (this.players[index].cards.length === 0) return;
-
-      else if (this.cardPlayed.length > 0 && this.skipFlag < 3) {
+      if (this.cardPlayed.length > 0 && this.skipFlag < 3) {
         this.followRound(index)
       } else {
         this.newRound(index)
       }
-
+      fnCallack(index);
+      if (this.players[index].cards.length === 0) return;
       index = index === 3 ? 0 : ++index;
-      fnCallack();
       this.handlePlay(index, fnCallack);
-    }, 300)
+      
+    }, 20)
 
-  };
+  }
 }

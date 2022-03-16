@@ -4,16 +4,16 @@ import Player from './component/Player/Player';
 import { Cards } from './util/cards';
 import BoardGame from './util/boardGame';
 import { numbersCard, symbols } from './constant/porker';
-import { renderBtn } from './util/helper';
 
 const boardGame = new BoardGame(4);
 const cardsObj = new Cards();
 const newCards = cardsObj.new(numbersCard, symbols);
 
 function App() {
-  const [cards, setCards] = useState(newCards);
+  const [cards, setCards] = useState([...newCards]);
+  const [players, setPlayers] = useState(boardGame.players)
   const [decks, setDecks] = useState(boardGame.decks);
-
+  const [winner, setWinner] = useState('');
 
   //shuffle playing cards
   const shuffleCard = () => {
@@ -33,25 +33,36 @@ function App() {
   const divideCard = () => {
     let indexPlayer = Math.floor(Math.random() * boardGame.players.length);
     let divideCards = [...cards];
-    alert(`chia cho player ${indexPlayer + 1} trước!!!`);
+
     cardsObj.divideNumberRecursive(0, divideCards.length, function (index) {
-      boardGame.players[indexPlayer].cards.push(divideCards[index]);
+      players[indexPlayer].cards.push(divideCards[index]);
       indexPlayer = indexPlayer === 3 ? 0 : ++indexPlayer;
 
       cards.shift();
       setCards([...cards]);
-      renderBtn(cards);
     });
   }
   //handlePlayGame
   const handlePlayGame = () => {
     let randomIndex = Math.floor(Math.random() * boardGame.players.length);
     alert(`player ${randomIndex + 1} ra bài trước!!!`);
-    boardGame.handlePlay(randomIndex, function () {
+    boardGame.handlePlay(randomIndex, function (index) {
+      if(boardGame.players[index].cards.length === 0){
+        setWinner(`player - ${index + 1} -`)
+      }
       setDecks([...boardGame.decks])
     });
   }
+  const handlePlayAgain = () => {
+    const newBoardGame = new BoardGame(4);
+    const cards = new Cards();
+    const newCardArr = cards.new(numbersCard, symbols);
 
+    setCards(newCardArr)
+    setPlayers(newBoardGame.players)
+    setDecks(newBoardGame.decks)
+    setWinner('')
+  }
   const renderBoardGame = () => {
     return decks.map(((item, index) =>
       <div key={index} className="m-2">
@@ -87,20 +98,43 @@ function App() {
         <form id="i0epk" className="form">
           <div id="i673q" className="row">
             <div id="ii0hl" className="cell">
-              <button type="button" id="iek88" className="button mixNumbers" onClick={() => shuffleCard()}>Trộn số</button>
+              <button
+                type="button"
+                id="iek88"
+                className="button mixNumbers"
+                style={{ opacity: cards.length <= 0 ? 0.4 : '' }}
+                disabled={cards.length <= 0 ? true : false}
+                onClick={() => shuffleCard()}
+              >Trộn số</button>
             </div>
             <div id="itbn1" className="cell">
-              <button type="button" id="i9gof" className="button divideNumbers" onClick={() => divideCard()}>Chia số</button>
+              <button
+                type="button"
+                id="i9gof"
+                className="button divideNumbers"
+                style={{ opacity: cards.length <= 0 ? 0.4 : '' }}
+                disabled={cards.length <= 0 ? true : false}
+                onClick={() => divideCard()}
+              >Chia số</button>
             </div>
             <div id="iyfuk" className="cell">
-              <button type="button" id="ixjt2" className="button playGame"
-                disabled={cards.length > 0 ? true : false}
-                onClick={() => handlePlayGame()}>Bắt đầu chơi</button>
+              {
+                !winner ? <button type="button" id="ixjt2" className="button playGame"
+                  disabled={cards.length > 0 ? true : false}
+                  onClick={() => handlePlayGame()}>Bắt đầu chơi</button> :
+                  <button type="button" className="button playGame"
+                    onClick={() => handlePlayAgain()}>Chơi lại</button>
+              }
+
             </div>
           </div>
 
           <div id="iovju" className="row__player">
-            {boardGame.players.map((player, index) => <Player key={index} player={player} name={`player-${index + 1}`} />)}
+            {players.map((player, index) => <Player
+              key={index}
+              player={player}
+              name={`player-${index + 1}`}
+            />)}
           </div>
 
         </form>
@@ -111,7 +145,7 @@ function App() {
               <div className='container-cards'>
                 {renderBoardGame()}
               </div>
-              <h5 id="ig6gf">Người thắng: <span id="winner" /></h5>
+              {winner && <h5 id="ig6gf">Người thắng: {winner}</h5>}
             </div>
           </div>
         </div>

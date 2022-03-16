@@ -81,6 +81,7 @@ export default class Player {
             if (greaterCards.length > 0) {
                 const filterDoubleCard = this.filterDoubleCards(greaterCards);
                 const index = randomLength(filterDoubleCard.length);
+                console.log('doubleCard', filterDoubleCard[index])
                 const randomDoubleCards = this.cards.filter((item) => item.number === filterDoubleCard[index].number);
                 this.deleteCards(randomDoubleCards);
                 if (randomDoubleCards.length > 2) {

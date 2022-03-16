@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export default function Player({ player, name }) {
     const [sort, setSort] = useState(true);
-
+    
     const handleSort = () => {
         player.sortCards(player.cards, sort);
         setSort(!sort);

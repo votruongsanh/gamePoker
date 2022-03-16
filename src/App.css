@@ -60,11 +60,11 @@ body {
   width: 350px;
   font-family: Arial, Helvetica, sans-serif;
 }
-#ixjt2 {
+.playGame {
   width: 350px;
   font-family: Arial, Helvetica, sans-serif;
 }
-#ixjt2:hover {
+.playGame:hover {
   opacity: 0.8;
 }
 #i9gof:hover {
