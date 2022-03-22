@@ -79,16 +79,21 @@ export default class Player {
                 return total += item.number + item.symbol
             }, 0))
             if (greaterCards.length > 0) {
+                if (greaterCards.length < 2) {
+                    const doubleCards = this.cards.filter((item) => item.number === greaterCards[0].number);
+                    this.deleteCards(doubleCards);
+                    return doubleCards;
+                }
+
                 const filterDoubleCard = this.filterDoubleCards(greaterCards);
                 const index = randomLength(filterDoubleCard.length);
-                console.log('doubleCard', filterDoubleCard[index])
                 const randomDoubleCards = this.cards.filter((item) => item.number === filterDoubleCard[index].number);
                 this.deleteCards(randomDoubleCards);
                 if (randomDoubleCards.length > 2) {
                     randomDoubleCards.splice(2);
                 }
                 return randomDoubleCards;
-            }else
+            } else
                 return [];
         }
 

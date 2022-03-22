@@ -10,10 +10,11 @@ const cardsObj = new Cards();
 const newCards = cardsObj.new(numbersCard, symbols);
 
 function App() {
-  const [cards, setCards] = useState([...newCards]);
+  const [cards, setCards] = useState(newCards);
   const [players, setPlayers] = useState(boardGame.players)
   const [decks, setDecks] = useState(boardGame.decks);
   const [winner, setWinner] = useState('');
+  const [playGame, setPlayGame] = useState(boardGame);
 
   //shuffle playing cards
   const shuffleCard = () => {
@@ -31,7 +32,7 @@ function App() {
   }
   //divide playing cards
   const divideCard = () => {
-    let indexPlayer = Math.floor(Math.random() * boardGame.players.length);
+    let indexPlayer = Math.floor(Math.random() * players.length);
     let divideCards = [...cards];
 
     cardsObj.divideNumberRecursive(0, divideCards.length, function (index) {
@@ -42,15 +43,14 @@ function App() {
       setCards([...cards]);
     });
   }
-  //handlePlayGame
   const handlePlayGame = () => {
-    let randomIndex = Math.floor(Math.random() * boardGame.players.length);
+    let randomIndex = Math.floor(Math.random() * players.length);
     alert(`player ${randomIndex + 1} ra bài trước!!!`);
-    boardGame.handlePlay(randomIndex, function (index) {
-      if(boardGame.players[index].cards.length === 0){
+    playGame.handlePlay(randomIndex, function (index) {
+      if (players[index].cards.length === 0) {
         setWinner(`player - ${index + 1} -`)
       }
-      setDecks([...boardGame.decks])
+      setDecks([...decks])
     });
   }
   const handlePlayAgain = () => {
@@ -62,6 +62,7 @@ function App() {
     setPlayers(newBoardGame.players)
     setDecks(newBoardGame.decks)
     setWinner('')
+    setPlayGame(newBoardGame)
   }
   const renderBoardGame = () => {
     return decks.map(((item, index) =>

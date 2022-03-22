@@ -69,7 +69,7 @@ export default class BoardGame {
   }
 
   handlePlay(index, fnCallack) {
-    
+
     setTimeout(() => {
       if (this.cardPlayed.length > 0 && this.skipFlag < 3) {
         this.followRound(index)
@@ -80,7 +80,7 @@ export default class BoardGame {
       if (this.players[index].cards.length === 0) return;
       index = index === 3 ? 0 : ++index;
       this.handlePlay(index, fnCallack);
-      
+
     }, 20)
 
   }
